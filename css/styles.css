@@ -1,0 +1,361 @@
+/* ============================================
+   CSS Global - Guias de Integração de APIs
+   CRM DataCrazy
+   ============================================ */
+
+/* Variáveis globais */
+:root {
+  --font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-scheme: light;
+  --color-text: #1d2939;
+  --color-text-secondary: #334e68;
+  --color-text-muted: #475569;
+  --color-text-light: #627d98;
+  --color-text-lighter: #64748b;
+  --color-background: #f2f4f8;
+  --color-background-alt: #f4f7fb;
+  --color-background-light: #f8fbff;
+  --color-background-card: #f8fafc;
+  --color-primary: #0f62fe;
+  --color-primary-dark: #0b4fcc;
+  --color-primary-light: #0057d9;
+  --color-accent: #004aae;
+  --color-accent-light: #0d72d1;
+  --color-border: #e2e8f0;
+  --color-border-light: rgba(16, 42, 67, 0.08);
+  --shadow-card: 0 20px 40px rgba(16, 42, 67, 0.08);
+  --shadow-hero: 0 24px 60px rgba(15, 23, 42, 0.18);
+  --shadow-section: 0 16px 45px rgba(15, 23, 42, 0.08);
+  --radius-card: 20px;
+  --radius-card-small: 12px;
+  --radius-hero: 24px;
+  --radius-section: 20px;
+  --radius-image: 12px;
+  --radius-figure: 18px;
+  --radius-video: 16px;
+  --line-height: 1.65;
+  --line-height-tight: 1.02;
+}
+
+/* Reset e base */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+}
+
+/* Links */
+a { color: var(--color-primary-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Imagens */
+img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-image); }
+
+/* Container principal */
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+/* ============================================
+   Estilos do Menu Principal (index.html)
+   ============================================ */
+
+body.home-page {
+  background: var(--color-background-alt);
+  color: #102a43;
+  line-height: 1.6;
+}
+
+body.home-page main {
+  width: min(1080px, calc(100% - 32px));
+  padding: 40px 0 80px;
+}
+
+body.home-page header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+body.home-page header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+body.home-page header p {
+  max-width: 640px;
+  margin: 16px auto 0;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+body.home-page .cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+body.home-page .card {
+  background: white;
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-light);
+}
+
+body.home-page .card h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.35rem;
+}
+
+body.home-page .card p {
+  margin: 0 0 20px;
+  color: var(--color-text-muted);
+}
+
+body.home-page .card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-card-small);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.home-page .card a:hover {
+  background: var(--color-primary-dark);
+}
+
+body.home-page .footnote {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Estilos dos Guias de API (molde-api)
+   ============================================ */
+
+body.api-guide main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+body.api-guide nav {
+  margin-bottom: 20px;
+}
+
+body.api-guide nav a {
+  font-weight: 700;
+}
+
+/* Hero header */
+body.api-guide header.hero {
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  color: white;
+  border-radius: var(--radius-hero);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-hero);
+}
+
+body.api-guide .hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  opacity: 0.86;
+  margin-bottom: 16px;
+}
+
+body.api-guide .hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: var(--line-height-tight);
+}
+
+body.api-guide .hero .subtitle {
+  margin: 18px 0 0;
+  max-width: 720px;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+
+body.api-guide .hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  font-size: 0.95rem;
+  color: #dbeafe;
+}
+
+/* Seções */
+body.api-guide section {
+  margin-top: 32px;
+  padding: 24px;
+  background: white;
+  border-radius: var(--radius-section);
+  box-shadow: var(--shadow-section);
+}
+
+body.api-guide section h2 {
+  font-size: 1.55rem;
+  margin-top: 0;
+  color: #0f172a;
+}
+
+body.api-guide section h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+/* Overview */
+body.api-guide .overview {
+  background: var(--color-background-light);
+  border-left: 4px solid var(--color-primary);
+}
+
+body.api-guide .overview p {
+  margin: 0;
+}
+
+/* Table of contents */
+body.api-guide .toc ol,
+body.api-guide .toc ul,
+body.api-guide .steps {
+  padding-left: 1.3rem;
+  margin: 0;
+}
+
+body.api-guide .toc li,
+body.api-guide .steps li {
+  margin-bottom: 0.8rem;
+}
+
+body.api-guide .toc ol {
+  counter-reset: item;
+}
+
+body.api-guide .toc li {
+  list-style: none;
+  margin-bottom: 0.85rem;
+}
+
+body.api-guide .toc li::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+/* Figure com legenda */
+body.api-guide .figure {
+  margin: 24px 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-figure);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+body.api-guide .figure figcaption {
+  padding: 14px 18px;
+  background: var(--color-background-card);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Vídeo de apoio */
+body.api-guide .video-support {
+  margin-top: 32px;
+  padding: 22px;
+  background: var(--color-background-light);
+  border-left: 4px solid var(--color-primary-light);
+  border-radius: var(--radius-figure);
+}
+
+body.api-guide .video-support h2 {
+  margin-top: 0;
+  font-size: 1.55rem;
+  color: #0f172a;
+}
+
+body.api-guide .video-support p {
+  margin: 0;
+}
+
+body.api-guide .video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-top: 18px;
+  background: var(--color-border);
+  border-radius: var(--radius-video);
+  overflow: hidden;
+}
+
+body.api-guide .video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Footer */
+body.api-guide .footer {
+  margin-top: 34px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-lighter);
+}
+
+/* Note box */
+body.api-guide .note {
+  background: var(--color-background-light);
+  border-left: 4px solid var(--color-primary);
+  padding: 18px 20px;
+  border-radius: var(--radius-figure);
+  color: #0f172a;
+}
+
+body.api-guide .note strong {
+  color: #0f172a;
+}
+
+/* Grid layout */
+body.api-guide .grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+@media (max-width: 700px) {
+  body.api-guide section {
+    padding: 20px;
+  }
+  
+  body.api-guide .hero {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.home-page main {
+    padding: 24px 0 40px;
+  }
+}
